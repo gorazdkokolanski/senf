@@ -46,6 +46,10 @@ header {
 
 .right-header {}
 
+.right-header svg path{
+    stroke: #2066B0;
+}
+
 .right-header img {
     height: 42px;
 }
@@ -632,6 +636,8 @@ body:has(#main) .socials {
     gap: 6px;
     width: 222px;
     border-radius: 4px;
+    color: #2066B0;
+    font-size: 20px;
 }
 
 .language-dropdown {
@@ -644,6 +650,8 @@ body:has(#main) .socials {
     padding: 8px 0;
     min-width: 220px;
     z-index: 100;
+    color: #2066B0;
+    font-size: 20px;
 }
 
 .hidden {
@@ -656,6 +664,8 @@ body:has(#main) .socials {
     border: none;
     padding: 8px 12px;
     text-align: center;
+    color: #2066B0;
+    font-size: 20px;
     cursor: pointer;
 
 }
