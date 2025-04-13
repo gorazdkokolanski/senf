@@ -795,6 +795,10 @@ body:has(#main) .socials {
         flex: 1;
     }
 
+    .subject-card-back{
+        gap: 7px;
+    }
+
     .subjects>a {
         width: 135px;
         height: 30px;
