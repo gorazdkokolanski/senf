@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>کانکور مضامین</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+</head>
+
+<body>
+  <header>
+    <div class="container header-container">
+      <!-- Left header remains LTR for logo -->
+      <div class="left-header" style="direction: ltr; text-align: left;">
+        <a href="index.html">
+          <img src="img/Logo.png" alt="logo">
+        </a>
+      </div>
+      <!-- Right header with language switcher -->
+      <div class="right-header">
+        <div class="language-switcher" id="language-switcher">
+          <button class="language-toggle-btn" id="langToggleBtn">
+            <span id="selected-lang">دری</span>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="language-dropdown hidden" id="langDropdown">
+            <button class="lang-option" data-lang="fa">دری</button>
+            <button class="lang-option" data-lang="ps">پښتو</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <section id="subjects">
+    <div class="container subjects-container">
+      <!-- Translatable heading -->
+      <h2 data-i18n="subjectsHeading">Kankoor Subjects</h2>
+      <!-- Mobile Swiper container with an ID for the inner wrapper -->
+      <div class="swiper-container mobile-swiper">
+        <div class="swiper-wrapper" id="subjects-mobile">
+          <!-- Existing slides will be cleared and populated by subjects-language.js -->
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+      <!-- Desktop layout container with an ID -->
+      <div class="subject-cards desktop-layout" id="subjects-desktop">
+        <!-- Existing desktop subject cards will be cleared and repopulated by subjects-language.js -->
+      </div>
+      <div class="two-btns">
+        <a class="get-started-btn" href="index.html">
+          <img style="height: 30px;" src="img/home.png" alt="started">
+          <!-- Translatable button text -->
+          <div data-i18n="homePageBtn">Home Page</div>
+        </a>
+        <a class="get-started-btn" href="">
+          <img src="img/get started.png" alt="started">
+          <!-- Translatable button text -->
+          <div data-i18n="getStartedBtn">Get Started</div>
+        </a>
+      </div>
+    </div>
+  </section>
+  <div class="overlay"></div>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <script src="subjects-language.js"></script>
+  <script>
+    setTimeout(() => {
+      const cards = document.querySelectorAll(".subject-card")
+    cards.forEach(card => {
+      card.addEventListener("click", () => {
+        document.querySelector(".subject-card").style.animation = "none";
+        console.log(document.querySelector(".subject-card"))
+        console.log("das")
+      })
+    })
+    }, 1000);
+    
+  </script>
+</body>
+
+</html>

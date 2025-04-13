@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>خبرها</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+</head>
+<body>
+  <header>
+    <div class="container header-container">
+      <div class="left-header">
+        <a href="index.html">
+          <img src="img/Logo.png" alt="logo">
+        </a>
+      </div>
+      <!-- Updated language switcher replacing the old Language.png -->
+      <div class="right-header">
+        <div class="language-switcher" id="language-switcher">
+          <button class="language-toggle-btn" id="langToggleBtn">
+            <span id="selected-lang">دری</span>
+            <svg width="12" height="12" viewBox="0 0 512 512" aria-hidden="true">
+              <path fill="currentColor" d="M128 192l128 128 128-128z"></path>
+            </svg>
+          </button>
+          <div class="language-dropdown hidden" id="langDropdown">
+            <button class="lang-option" data-lang="fa">دری</button>
+            <button class="lang-option" data-lang="ps">پښتو</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <section id="news">
+    <div class="container news-container">
+      <!-- News heading with data-i18n for language switching -->
+      <h2 data-i18n="newsHeading">خبرها</h2>
+      <!-- This container will be dynamically populated by news-language.js -->
+      <div id="news-items"></div>
+      <div class="two-btns">
+        <a class="get-started-btn" href="index.html">
+          <img style="height: 30px;" src="img/home.png" alt="started">
+          <div data-i18n="homePageBtn">صفحه اصلی</div>
+        </a>
+        <a class="get-started-btn" href="">
+          <img src="img/get started.png" alt="started">
+          <div data-i18n="getStartedBtn">شروع کنید</div>
+        </a>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Include the news-language.js file -->
+  <script src="news-language.js"></script>
+</body>
+</html>

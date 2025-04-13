@@ -1,0 +1,945 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #D6E6F3;
+    color: #3F3F3F;
+}
+
+h1, h2, h3, h4, h5, h6, p, ul {
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    max-width: 1500px;
+}
+
+header {
+    width: 100%;
+    position: relative;
+    z-index: 5;
+}
+
+.header-container {
+    padding-top: 20px;
+    height: 123px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.left-header {}
+
+.left-header img {
+    height: 123px;
+}
+
+.right-header {}
+
+.right-header img {
+    height: 42px;
+}
+
+section {
+    width: 100%;
+    min-height: calc(100vh - 183px);
+}
+
+body:has(#main) {
+    overflow: hidden;
+}
+
+#main {
+    max-height: calc(100vh - 183px);
+    position: relative;
+    z-index: 5;
+}
+
+.home-bg-div {
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+    height: 100%;
+}
+
+.home-abs-bg {
+    pointer-events: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    min-width: 1300px;
+}
+
+.main-container {
+    display: flex;
+    min-height: calc(100vh - 143px);
+    justify-content: space-between;
+    height: 100%;
+}
+
+.left-main {}
+
+.subjects {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.subjects>a {
+    height: 40px;
+    width: 204px;
+    border-radius: 12px;
+    gap: 20px;
+    display: flex;
+    align-items: center;
+    color: white;
+    font-weight: 400;
+}
+
+.subjects>a:nth-child(1) {
+    background-color: #0D7C7B;
+}
+
+.subjects>a:nth-child(2) {
+    background-color: #423793;
+}
+
+.subjects>a:nth-child(3) {
+    background-color: #2066B0;
+}
+
+.subjects>a:nth-child(4) {
+    background-color: #0B7D54;
+}
+
+.subjects>a:nth-child(5) {
+    background-color: #890081;
+}
+
+.subjects>a:nth-child(6) {
+    background-color: #AE3400;
+}
+
+.subjects>a img {
+    height: 25px;
+    margin-left: 15px;
+}
+
+.subjects>a:nth-child(2) img {
+    height: 33px;
+}
+
+.subjects>a:nth-child(4) img {
+    height: 33px;
+}
+
+.subjects>a:nth-child(6) img {
+    height: 33px;
+}
+
+.right-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 35px;
+    margin-top: 40px;
+}
+
+.right-main>h1 {
+    color: #2066B0;
+    font-size: 50px;
+    text-align: center;
+}
+
+.get-started-btn {
+    display: flex;
+    align-items: center;
+    background-color: #2066B0;
+    color: white;
+    gap: 8px;
+    height: 45px;
+    width: 182px;
+    justify-content: center;
+    border-radius: 16px;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.get-started-btn img {
+    height: 26px;
+}
+
+.socials {
+    background-color: white;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    border-radius: 12px;
+    justify-content: center;
+}
+
+body:has(#main) .socials {
+    position: absolute;
+    bottom: 70px;
+    transform: translateX(-50%);
+    left: 50%;
+    z-index: 10;
+}
+
+#faq+.socials{
+    width: 400px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+
+#faq{
+    min-height: calc(100vh - 308px);
+}
+
+.socials>a>img {
+    height: 30px;
+}
+
+.socials>a:nth-child(6) img {
+    height: 23px;
+}
+
+.socials>a:nth-child(2) img {
+    height: 27px;
+}
+
+.socials>a:nth-child(4) img {
+    height: 27px;
+}
+
+.subjects span {
+    width: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.news-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 35px;
+    padding-bottom: 30px;
+    max-width: 1200px;
+}
+
+.news-container>h2 {
+    font-weight: 700;
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+#news-items {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+#faq-items {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    width: 100%;
+}
+
+.get-started-btn img {
+    order: 3;
+}
+
+.new {
+    background-color: white;
+    width: 100%;
+    border-radius: 53px;
+    display: flex;
+    flex-direction: column;
+    padding: 40px 0;
+    align-items: center;
+    gap: 10px;
+}
+
+.new>* {
+    width: calc(100% - 80px);
+}
+
+.news-date {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.news-title {
+    text-align: center;
+    color: #2066B0;
+    font-weight: 700;
+    margin-bottom: 10px;
+    font-size: 32px;
+}
+
+.news-description {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.3;
+}
+
+.two-btns {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+
+
+#faq {
+    background-color: #d9e6f3;
+    padding-bottom: 30px;
+}
+
+.faq-container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.faq-title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.faq-item {
+    margin: 10px auto;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    background-color: white;
+}
+
+.faq-question {
+    width: 100%;
+    padding: 20px;
+    font-size: 1rem;
+    text-align: right;
+    background: #fff;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    position: relative;
+}
+
+.faq-question::after {
+    content: '+';
+    position: absolute;
+    left: 20px;
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+    transform: translateY(-50%);
+    font-weight: 500;
+    top: 50%;
+}
+
+.faq-question.active::after {
+    content: '-';
+    top: 45%;
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 20px;
+    background-color: white;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    border-top: 1px solid #D9D9D9;
+}
+
+.faq-answer.open {
+    padding: 20px;
+    max-height: 500px;
+}
+
+.faq-container .two-btns {
+    margin-top: 50px;
+}
+
+.subjects-container {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    align-items: center;
+    padding-bottom: 40px;
+}
+
+.subjects-container>h2 {
+    font-size: 40px;
+    font-weight: 600;
+}
+
+.subject-cards {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.subject-card {
+    width: calc((100% - 60px) / 4);
+    border-radius: 30px;
+    position: relative;
+    color: white;
+    cursor: pointer;
+}
+
+.subject-card-front {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    position: relative;
+    z-index: 5;
+}
+
+.subject-card-front img {
+    width: 100%;
+}
+
+.subject-card-front>div:nth-child(2) {
+    width: 90%;
+    margin-top: 0px;
+}
+
+.subject-card-front>div:nth-child(2) {
+    font-weight: 600;
+    font-size: 24px;
+    padding-bottom: 40px;
+    text-align: center;
+}
+
+.subject-card-back {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    min-height: 310px;
+}
+
+.subject-card-back>div:nth-child(1) {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.subject-card-back>div:nth-child(2) {
+    font-size: 13px;
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 0px;
+}
+
+
+
+
+
+
+
+
+
+/* --- Card Container and Animation --- */
+/* Apply transition and 3D perspective to each card */
+.subject-card {
+    width: calc((100% - 60px) / 4);
+    border-radius: 30px;
+    position: relative;
+    cursor: pointer;
+    perspective: 1000px;
+    /* Enables the 3D flip */
+    transition: transform 0.5s ease;
+    /* Smooth translation/scale transition */
+}
+
+/* When a card is active (clicked), bring it above the others */
+.subject-card.active {
+    z-index: 100;
+}
+
+/* --- Inner Container for Flip Animation --- */
+/* Wrap the front and back faces; allow 3D transforms */
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s ease;
+    /* Smooth flip transition */
+    transform-style: preserve-3d;
+    min-height: 310px;
+    /* Ensure children are rendered in 3D */
+}
+
+/* When flipped, rotate the inner container 180° */
+.card-inner.flip {
+    transform: rotateY(180deg);
+}
+
+/* --- Front and Back Faces Styling --- */
+/* Both faces fill the card and inherit the same background */
+.subject-card-front,
+.subject-card-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+}
+
+/* Hide the back face by default (it will be revealed when flipped) */
+.subject-card-back {
+    transform: rotateY(180deg);
+}
+
+.subject-card .subject-card-front,
+.subject-card .subject-card-back {}
+
+/* --- Matching Background Colors --- */
+/* For Subject Card 1 */
+.subject-card:nth-child(1) .subject-card-front,
+.subject-card:nth-child(1) .subject-card-back {
+    background-color: #457DBF;
+}
+
+/* For Subject Card 2 */
+.subject-card:nth-child(2) .subject-card-front,
+.subject-card:nth-child(2) .subject-card-back {
+    background-color: #413794;
+}
+
+/* For Subject Card 3 */
+.subject-card:nth-child(3) .subject-card-front,
+.subject-card:nth-child(3) .subject-card-back {
+    background-color: #90277E;
+}
+
+/* For Subject Card 4 */
+.subject-card:nth-child(4) .subject-card-front,
+.subject-card:nth-child(4) .subject-card-back {
+    background-color: #0C7D7A;
+}
+
+/* --- Overlay Styling --- */
+/* The overlay covers the page and provides a dimmed background */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 50;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+}
+
+/* When active, the overlay becomes visible */
+.overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.subject-card-front>div:nth-child(1) {
+    width: 90%;
+}
+
+.subject-card-back>* {
+    width: 80%;
+    text-align: center;
+}
+
+.exams .subject-card-front img {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.exams .subject-card-front>div:nth-child(1) {
+    display: flex;
+    justify-content: center;
+}
+
+/* By default: show desktop layout and hide the mobile swiper */
+.desktop-layout {
+    display: flex;
+}
+
+.mobile-swiper {
+    display: none;
+}
+
+.swiper-slide {
+    display: flex !important;
+    justify-content: center;
+}
+
+.swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
+    top: 580px !important;
+}
+
+#faq .socials {
+    margin-top: 40px;
+}
+
+
+
+
+.language-switcher {
+    position: relative;
+}
+
+.language-toggle-btn {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-bottom: none;
+    border-radius: 999px;
+    padding: 8px 12px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6px;
+    width: 222px;
+    border-radius: 4px;
+}
+
+.language-dropdown {
+    position: absolute;
+    top: 98%;
+    right: 0;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 0 0 8px 8px;
+    padding: 8px 0;
+    min-width: 220px;
+    z-index: 100;
+}
+
+.hidden {
+    display: none;
+}
+
+.lang-option {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 8px 12px;
+    text-align: center;
+    cursor: pointer;
+
+}
+
+.lang-option:hover {
+    background-color: #f2f2f2;
+}
+
+.left-header {
+    order: 3;
+}
+
+.left-main {
+    order: 3;
+}
+
+.subjects span {
+    order: 3;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.subjects>a {
+    justify-content: flex-end;
+}
+
+
+
+
+
+
+
+
+.subjects>a:nth-child(1) {
+    /* A soft white glow that pulsates */
+    box-shadow: 0 0 5px 2px rgba(255, 255, 255, 0.5);
+    animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        box-shadow: 0 0 5px 2px rgba(255, 255, 255, 0.5);
+    }
+
+    to {
+        box-shadow: 0 0 20px 10px rgb(236, 255, 178);
+    }
+}
+
+
+.subject-card:hover {
+    box-shadow: 0 0 5px 2px rgb(225, 255, 0);
+    animation: glow 1s ease-in-out infinite alternate;
+}
+
+.subject-card:has(.card-inner.flip):hover{
+    animation: none!important;
+    box-shadow: none!important;
+}
+
+
+
+.privacy {
+    position: absolute;
+    bottom: 20px;
+    right: 70px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: center;
+    border-radius: 16px;
+    width: 180px;
+    height: 35px;
+    background-color: white;
+    cursor: pointer;
+    font-size: 14px;
+    z-index: 5;
+}
+
+
+
+
+
+/* Mobile media query */
+@media only screen and (max-width: 1024px) {
+    .subjects-container h2 {
+        margin-bottom: -20px;
+    }
+
+    .desktop-layout {
+        display: none;
+    }
+
+    .mobile-swiper {
+        display: block;
+    }
+
+    /* Optional: adjust swiper container styling */
+    .swiper-container.mobile-swiper {
+        width: 100%;
+        padding: 20px 0;
+    }
+
+    .swiper-slide {
+        display: flex;
+        justify-content: center;
+        width: 80%;
+        /* Adjust so one slide is mostly visible */
+    }
+
+    .socials>a>img {
+        height: auto !important;
+        width: 80%;
+    }
+
+    .socials {
+        width: 80%;
+        max-width: 450px;
+        padding: 5px 10px;
+    }
+
+    .socials>a {
+        flex: 1;
+    }
+
+    .subjects>a {
+        width: 135px;
+        height: 30px;
+        border-radius: 6px;
+        gap: 5px;
+        font-size: 13px;
+    }
+
+    .subjects span {
+        width: 25px;
+    }
+
+    .subjects>a img {
+        height: 20px;
+        margin-left: 5px;
+    }
+
+    .subjects>a:nth-child(2) img {
+        height: 28px;
+    }
+
+    .subjects>a:nth-child(4) img {
+        height: 28px;
+    }
+
+    .subjects>a:nth-child(6) img {
+        height: 28px;
+    }
+
+    .right-main>h1 {
+        font-size: 28px;
+    }
+
+    .right-main .get-started-btn {
+        width: 120px;
+        height: 35px;
+        border-radius: 6px;
+        font-size: 12px;
+    }
+
+    .container{
+        width: 95%;
+    }
+
+    .subjects-container{
+        overflow: hidden;
+    }
+
+    .language-toggle-btn{
+        width: 152px;
+    }
+
+    .language-dropdown{
+        min-width: 150px;
+    }
+
+    .right-main{
+        margin-top: 0;
+    }
+
+    .home-bg-div{
+        min-height: 100vh;
+    }
+
+    .home-abs-bg{
+        min-height: 100vh;
+        object-fit: cover;
+    }
+
+    .privacy{
+        right: 50%;
+        transform: translateX(50%);
+    }
+
+}
+
+
+
+@media only screen and (max-width: 424px) {
+    .socials>a>img {
+        height: auto !important;
+        width: 100%;
+    }
+
+    .socials {
+        width: 90%;
+    }
+}
+
+
+
+
+
+
+
+@media only screen and (max-width: 1024px) {
+    .overlay {
+        display: none;
+    }
+
+    .subject-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .subject-card {
+        max-width: 376px;
+        width: 100%;
+    }
+
+    .two-btns {
+        flex-direction: column;
+        max-width: 376px;
+        position: relative;
+        z-index: 20;
+        width: 100%;
+    }
+
+    .two-btns>a {
+        width: 100%;
+    }
+
+    .new>* {
+        width: calc(100% - 50px);
+    }
+
+    .home-abs-bg {}
+
+    .left-header img {
+        height: 94px;
+    }
+
+    .right-header img {
+        height: 31px;
+    }
+
+    .header-container {
+        height: 80px;
+    }
+
+    .news-date {
+        font-size: 16px;
+    }
+
+    .news-title {
+        font-size: 24px;
+    }
+
+    .news-description {
+        font-size: 18px;
+    }
+
+    .new {
+        gap: 5px;
+        padding: 20px 0;
+        border-radius: 20px;
+    }
+
+    .subjects-container>h2 {
+        font-size: 30px;
+    }
+}

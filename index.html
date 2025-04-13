@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fa" dir="lt">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+</head>
+
+<body>
+  <div class="home-bg-div">
+    <img src="img/kankor.af copy.png" alt="kankor" class="home-abs-bg">
+  </div>
+  <header>
+    <div class="container header-container">
+      <div class="left-header">
+        <a href="index.html">
+          <img src="img/Logo.png" alt="logo">
+        </a>
+      </div>
+      <!-- Language switcher now with two options: Dari and Pashto -->
+      <div class="right-header">
+        <div class="language-switcher" id="language-switcher">
+          <button class="language-toggle-btn" id="langToggleBtn">
+            <span id="selected-lang">دری</span>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="language-dropdown hidden" id="langDropdown">
+            <button class="lang-option" data-lang="fa">دری</button>
+            <button class="lang-option" data-lang="ps">پښتو</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <section id="main">
+    <div class="main-container container">
+      <div class="left-main">
+        <div class="subjects">
+          <!-- data-i18n keys for text that will change based on language -->
+          <a href="news.html">
+            <span>
+              <img src="img/news_update.png" alt="news">
+            </span>
+            <div data-i18n="newsUpdate">اخبار/تازه‌ها</div>
+          </a>
+          <a href="">
+            <span>
+              <img src="img/kankor results.png" alt="news">
+            </span>
+            <div data-i18n="kankorResults">نتایج کانکور</div>
+          </a>
+          <a href="subjects.html">
+            <span>
+              <img src="img/kankor subjects.png" alt="news">
+            </span>
+            <div data-i18n="kankorSubjects">مضامین کانکور</div>
+          </a>
+          <a href="">
+            <span>
+              <img src="img/question bank.png" alt="news">
+            </span>
+            <div data-i18n="questionBank">بانک سوالات</div>
+          </a>
+          <a href="exams.html">
+            <span>
+              <img src="img/exams.png" alt="news">
+            </span>
+            <div data-i18n="exams">امتحانات</div>
+          </a>
+          <a href="faq.html">
+            <span>
+              <img src="img/faq.png" alt="news">
+            </span>
+            <div data-i18n="faqs">سوالات متداول</div>
+          </a>
+        </div>
+      </div>
+      <div class="right-main">
+        <h1 data-i18n="mainTitle">
+          آموزش کانکور<br>افغانستان
+        </h1>
+        <a class="get-started-btn" href="">
+          <img src="img/get started.png" alt="started">
+          <div data-i18n="getStarted">شروع کنید</div>
+        </a>
+      </div>
+    </div>
+  </section>
+  <div class="socials">
+    <a href="">
+      <img src="img/chat with us.png" alt="social-icon">
+    </a>
+    <a href="">
+      <img src="img/chat ai.png" alt="social-icon">
+    </a>
+    <a href="">
+      <img src="img/whatsapp.png" alt="social-icon">
+    </a>
+    <a href="">
+      <img src="img/playstore.png" alt="social-icon">
+    </a>
+    <a href="">
+      <img src="img/facebook.png" alt="social-icon">
+    </a>
+    <a href="">
+      <img src="img/youtube.png" alt="social-icon">
+    </a>
+    <a href="">
+      <img src="img/instagram.png" alt="social-icon">
+    </a>
+  </div>
+  <a class="privacy" target="_blank" href="https://lms.senf.af/privacy-policy?isweb=true">
+    <img src="img/privacy.svg" alt="social-icon">
+    <div data-i18n="privacy">پالیسی حریم خصوصی</div>
+</a>
+
+
+  <script src="language.js"></script>
+</body>
+
+</html>
