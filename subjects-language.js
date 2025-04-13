@@ -30,9 +30,9 @@ document.addEventListener("DOMContentLoaded", () => {
       id: "subject-2",
       image: "img/Chemistry.png",
       title: { fa: "شیمی", ps: "کيميا" },
-      description: { 
-        fa: "توضیحات مربوط به شیمی.", 
-        ps: "د کيميا توضیحات." 
+      description: {
+        fa: "توضیحات مربوط به شیمی.",
+        ps: "د کيميا توضیحات."
       },
       color: "#413794"
     },
@@ -40,9 +40,9 @@ document.addEventListener("DOMContentLoaded", () => {
       id: "subject-3",
       image: "img/Biology.png",
       title: { fa: "زیست شناسی", ps: "بيولوژي" },
-      description: { 
-        fa: "توضیحات مربوط به زیست شناسی.", 
-        ps: "د بيولوژي توضیحات." 
+      description: {
+        fa: "توضیحات مربوط به زیست شناسی.",
+        ps: "د بيولوژي توضیحات."
       },
       color: "#90277E"
     },
@@ -50,16 +50,17 @@ document.addEventListener("DOMContentLoaded", () => {
       id: "subject-4",
       image: "img/Physics.png",
       title: { fa: "فیزیک", ps: "فيزکس" },
-      description: { 
-        fa: "توضیحات مربوط به فیزیک.", 
-        ps: "د فيزکس توضیحات." 
+      description: {
+        fa: "توضیحات مربوط به فیزیک.",
+        ps: "د فيزکس توضیحات."
       },
       color: "#0C7D7A"
     }
   ];
 
   // --- Retrieve current language (default to Dari "fa") ---
-  let currentLang = localStorage.getItem("preferredLang") || "fa";
+  const defaultLang = "fa";
+  let currentLang = localStorage.getItem("preferredLang") || defaultLang;
 
   // --- Get container elements ---
   const mobileWrapper = document.getElementById("subjects-mobile");
@@ -119,12 +120,17 @@ document.addEventListener("DOMContentLoaded", () => {
     card.appendChild(cardInner);
 
     // --- Flip/Overlay Functionality ---
+    // On desktop (window.innerWidth > 1024) the card scales and centers before flipping.
+    // On both desktop and mobile, set the height of .subject-card-back to be:
+    // (height of the first div child) + (height of the second div child) + 30px.
+    
+
     card.addEventListener("click", function () {
       if (card.classList.contains("active")) {
         if (window.innerWidth > 1024) {
           card.style.transform = "translate(0, 0) scale(1)";
         } else {
-          card.style.height = "";
+          card.querySelector(".subject-card-back").style.height = "";
         }
         card.querySelector(".card-inner").classList.remove("flip");
         setTimeout(() => {
@@ -144,26 +150,15 @@ document.addEventListener("DOMContentLoaded", () => {
         card.style.transition = "transform 0.5s ease";
         card.style.transform = `translate(${deltaX}px, ${deltaY}px) scale(1.2)`;
       }
-      // Calculate the desired height for the card-inner from back contents:
-      // (height of first child of .subject-card-back) + (height of second child) + 30
+      // Calculate the desired height for .subject-card-back:
       const backElement = card.querySelector(".subject-card-back");
-      const cardInnerElem = card.querySelector(".card-inner");
       if (backElement && backElement.children.length >= 2) {
         const firstDivHeight = backElement.children[0].getBoundingClientRect().height;
         const secondDivHeight = backElement.children[1].getBoundingClientRect().height;
         const totalHeight = firstDivHeight + secondDivHeight + 30;
-        // Set the height on the entire card instead of only the card-inner for mobile.
-        if (window.innerWidth <= 1024) {
-          card.style.height = totalHeight + "px";
-        } else {
-          cardInnerElem.style.height = totalHeight + "px";
-        }
+        backElement.style.height = totalHeight + "px";
       } else {
-        if (window.innerWidth <= 1024) {
-          card.style.height = card.scrollHeight + "px";
-        } else {
-          cardInnerElem.style.height = cardInnerElem.scrollHeight + "px";
-        }
+        backElement.style.height = backElement.scrollHeight + "px";
       }
       card.classList.add("active");
       card.querySelector(".card-inner").classList.add("flip");
@@ -174,6 +169,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // --- Function to render subject cards into both containers ---
   function renderSubjects(lang) {
+    // Clear existing content
     mobileWrapper.innerHTML = "";
     desktopContainer.innerHTML = "";
     subjectsData.forEach(subject => {
@@ -225,19 +221,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // --- Language Switcher Functionality (if present on the page) ---
   if (langToggleBtn && langDropdown && selectedLangSpan) {
+    // Toggle dropdown on button click
     langToggleBtn.addEventListener("click", () => {
       langDropdown.classList.toggle("hidden");
     });
+    // Set up event listeners on each language option
     langDropdown.querySelectorAll(".lang-option").forEach(btn => {
       btn.addEventListener("click", (evt) => {
         const newLang = evt.target.getAttribute("data-lang");
         langDropdown.classList.add("hidden");
         applySubjectsLanguage(newLang);
+        // Update switcher label
         let label = "دری";
         if (newLang === "ps") label = "پښتو";
         selectedLangSpan.textContent = label;
       });
     });
+    // Close dropdown when clicking outside
     document.addEventListener("click", (e) => {
       if (!langToggleBtn.contains(e.target) && !langDropdown.contains(e.target)) {
         langDropdown.classList.add("hidden");
@@ -255,7 +255,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (window.innerWidth > 1024) {
         activeCard.style.transform = "translate(0, 0) scale(1)";
       } else {
-        activeCard.style.height = "";
+        activeCard.querySelector(".subject-card-back").style.height = "";
       }
       activeCard.querySelector(".card-inner").classList.remove("flip");
       setTimeout(() => {
