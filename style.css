@@ -866,6 +866,7 @@ body:has(#main) .socials {
     .home-abs-bg{
         min-height: 100vh;
         object-fit: cover;
+        min-width: 0;
     }
 
     .privacy{
