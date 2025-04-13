@@ -828,6 +828,7 @@ body:has(#main) .socials {
 
     .right-main>h1 {
         font-size: 28px;
+        margin-bottom: 120px;
     }
 
     .right-main .get-started-btn {
