@@ -715,10 +715,11 @@ body:has(#main) .socials {
     }
 }
 
-
-.subject-card:hover {
-    box-shadow: 0 0 5px 2px rgb(225, 255, 0);
-    animation: glow 1s ease-in-out infinite alternate;
+@media only screen and (min-width: 1024px){
+    .subject-card:hover {
+        box-shadow: 0 0 5px 2px rgb(225, 255, 0);
+        animation: glow 1s ease-in-out infinite alternate;
+    }
 }
 
 .subject-card:has(.card-inner.flip):hover{
